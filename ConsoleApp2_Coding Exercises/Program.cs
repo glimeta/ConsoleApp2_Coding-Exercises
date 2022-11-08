@@ -19,13 +19,14 @@ while (true)
         break;
     }
 
-  Items[index] = userItems;
-  index++;
-
-    if (userItems.ToLower().Trim() != "exit")     // this shoud be inside while case loop if mesage should show each time user makes an input
+    if (String.IsNullOrEmpty(userItems))  // String refers to input data userItems
     {
-        Console.WriteLine("You typed a word found in the datatbase.");
+        Console.WriteLine("Incorrect Entry. Data missing.");
     }
+
+        Items[index] = userItems;     // This command stacks input data userItems to string array,Items. 
+        index++;                      // It uses int index as counter of cell placement in string array,Items.
+
 }
 
 
